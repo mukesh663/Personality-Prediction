@@ -1,7 +1,6 @@
 # importing dependencies here
 import numpy as np
 import pandas as pd
-import os
 
 # feature engineering
 import re

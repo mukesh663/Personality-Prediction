@@ -26,10 +26,10 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
-# nltk.download("stopwords")
-# nltk.download('vader_lexicon')
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
+nltk.download("stopwords")
+nltk.download('vader_lexicon')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 
 # sentiment scoring
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
