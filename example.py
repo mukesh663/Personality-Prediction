@@ -17,7 +17,6 @@ from nltk.corpus import stopwords
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # pos tagging
-import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 
 # accuracy scores
@@ -232,10 +231,10 @@ def predict(s):
     X = prep_data(s)
 
     # loading the 4 models
-    EorI_model = load("trained_weights/Introversion.joblib")
-    SorN_model = load("trained_weights/Intuition.joblib")
-    TorF_model = load("trained_weights/Thinking.joblib")
-    JorP_model = load("trained_weights/Judging.joblib")
+    EorI_model = load("app/trained_weights/Introversion.joblib")
+    SorN_model = load("app/trained_weights/Intuition.joblib")
+    TorF_model = load("app/trained_weights/Thinking.joblib")
+    JorP_model = load("app/trained_weights/Judging.joblib")
 
     # predicting
     EorI_pred = EorI_model.predict(X)

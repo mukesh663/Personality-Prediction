@@ -21,7 +21,7 @@ import pandas as pd
 import os
 
 import re
-import app.nltk as nltk
+import nltk
 
 # lemmatizing
 from nltk.stem import WordNetLemmatizer
@@ -31,7 +31,7 @@ from nltk.corpus import stopwords
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # pos tagging
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import word_tokenize
 
 # accuracy scores
 from sklearn.metrics import (
