@@ -1,0 +1,5 @@
+stopwords
+wordnet
+averaged_perceptron
+vader_lexicon
+punkt
