@@ -14,10 +14,16 @@ body {
     margin: 90px 100px 40px 100px;
 }
 
-#fsize {
+#txtsize {
     font-weight: bold;
     font-size: 80px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+#typesize {
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 50px;
 }
 
 .progress {

@@ -11,7 +11,7 @@ def model():
     result = "Not Found"
     if request.method == 'POST':
         result = predict(request.get_json())
-        return result
+        return jsonify(result)
 
 ######################################################### Model ############################################################
 
@@ -226,12 +226,18 @@ def trace_back(combined):
     {"0": "P", "1": "J"},
     ]
 
+    type_dict = {"I":"Introversion", "E":"Extroversion", "S": "Sensing", "N":"Intuition",
+                 "F":"Feeling", "T":"Thinking", "P":"Perceiving", "J":"Judging"}
     result = []
     for num in combined:
         s = ""
+        lt = []
         for i in range(len(num)):
-            s += type_list[i][num[i]]
+            res = type_list[i][num[i]]
+            lt.append(type_dict[res])
+            s += res
         result.append(s)
+        result.append(lt)
         
     return result
     
@@ -254,10 +260,10 @@ def predict(s):
     X, output = prep_data(s)
 
     # loading the 4 models
-    EorI_model = load("trained_weights/Introversion.joblib")
-    SorN_model = load("trained_weights/Intuition.joblib")
-    TorF_model = load("trained_weights/Thinking.joblib")
-    JorP_model = load("trained_weights/Judging.joblib")
+    EorI_model = load("app/trained_weights/Introversion.joblib")
+    SorN_model = load("app/trained_weights/Intuition.joblib")
+    TorF_model = load("app/trained_weights/Thinking.joblib")
+    JorP_model = load("app/trained_weights/Judging.joblib")
 
     # predicting
     EorI_pred = EorI_model.predict(X)
@@ -271,6 +277,7 @@ def predict(s):
     for key in output.keys():
         output[key]= round(output[key]*100, 2)
     output["result"] = result[0]
+    output["typeExp"] = " - ".join(result[1])
     
     return output
 
