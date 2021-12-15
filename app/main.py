@@ -20,22 +20,17 @@ import numpy as np
 import pandas as pd
 import os
 
-# feature engineering
 import re
-import nltk
+import app.nltk as nltk
+
+# lemmatizing
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-
-nltk.download("stopwords")
-nltk.download('vader_lexicon')
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
 
 # sentiment scoring
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # pos tagging
-import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 
 # accuracy scores
